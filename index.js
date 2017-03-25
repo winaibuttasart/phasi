@@ -47,7 +47,7 @@ app.get('/bot', function(req, res) {
     var no_8 = req.query.no8;
 
 
-    jsonResponse.push({"text" : "No1 : "+no_1});
+    jsonResponse.push({"text" : "No1 : "+parseFloat(no_1)});
     jsonResponse.push({"text" : "No2 : "+no_2});
     jsonResponse.push({"text" : "No3 : "+no_3});
     jsonResponse.push({"text" : "No4 : "+no_4});
@@ -55,7 +55,7 @@ app.get('/bot', function(req, res) {
     jsonResponse.push({"text" : "No6 : "+no_6});
     jsonResponse.push({"text" : "No7 : "+no_7});
     jsonResponse.push({"text" : "No8 : "+no_8});
-    jsonResponse.push({"text" : "sum : "+(no_1+no_2+no_3+no_4+no_5+no_6+no_7+no_8)});
+    jsonResponse.push({"text" : "sum : "+(parseFloat(no_1)+parseFloat(no_2))});
     console.log("no1 : "+no_1);
     console.log("no2 : "+no_2);
     console.log("no3 : "+no_3);
@@ -64,7 +64,7 @@ app.get('/bot', function(req, res) {
     console.log("no6 : "+no_6);
     console.log("no7 : "+no_7);
     console.log("no8 : "+no_8);
-    console.log("sum : "+(no_1+no_2+no_3+no_4+no_5+no_6+no_7+no_8));
+    console.log("sum : "+(parseFloat(no_1)+parseFloat(no_2)));
 
     // var child = req.query.childrenPrice;
     // var disa = req.query.disable;
