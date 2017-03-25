@@ -102,14 +102,14 @@ app.get('/bot', function(req, res) {
 
     //jsonResponse.push({"text" : "step : "+s01});
 
-    jsonResponse.push({"text" : "No1 : "+no_1});
-    jsonResponse.push({"text" : "No2 : "+no_2});
-    jsonResponse.push({"text" : "No3 : "+no_3});
-    jsonResponse.push({"text" : "No4 : "+no_4});
-    jsonResponse.push({"text" : "No5 : "+no_5});
-    jsonResponse.push({"text" : "No6 : "+no_6});
-    jsonResponse.push({"text" : "No7 : "+no_7});
-    jsonResponse.push({"text" : "No8 : "+no_8});
+    // jsonResponse.push({"text" : "No1 : "+no_1});
+    // jsonResponse.push({"text" : "No2 : "+no_2});
+    // jsonResponse.push({"text" : "No3 : "+no_3});
+    // jsonResponse.push({"text" : "No4 : "+no_4});
+    // jsonResponse.push({"text" : "No5 : "+no_5});
+    // jsonResponse.push({"text" : "No6 : "+no_6});
+    // jsonResponse.push({"text" : "No7 : "+no_7});
+    // jsonResponse.push({"text" : "No8 : "+no_8});
     jsonResponse.push({"text" : "รวมเงินได้พึงประเมิน : "+sum});
     jsonResponse.push({"text" : "รวมค่าใช้จ่าย : "+total});
     jsonResponse.push({"text" : "รวมค่าลดหย่อน : "+lod});
