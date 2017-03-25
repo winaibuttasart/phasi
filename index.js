@@ -32,13 +32,13 @@ app.listen(app.get('port'), function() {
 app.get('/bot', function(req, res) {
 
     console.log('\n\n\n\n');
-  
+
     var url_parts = url.parse(req.url, true);
     var query = url_parts.query;
     var salary = req.query.salary; // $_GET["salary"]
     console.log(salary);
 
     var jsonResponse = [];
-    jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
+    jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..."+salary });
     res.send(jsonResponse);
 });
