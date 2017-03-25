@@ -18,46 +18,16 @@ app.get('/cool', function(request, response) {
   response.send(cool());
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
-
-// app.listen(80, function() {
-//     console.log('Chatfuel Bot-Server listening on port 80...');
+// app.listen(app.get('port'), function() {
+//   console.log('Node app is running on port', app.get('port'));
 // });
 
-app.get('/bot', function(req, res) {
+app.listen(80, function() {
+    console.log('Chatfuel Bot-Server listening on port 80...');
+});
 
-  var data = {
-    "glossary": {
-        "title": "example glossary",
-		"GlossDiv": {
-            "title": "S",
-			"GlossList": {
-                "GlossEntry": {
-                    "ID": "SGML",
-					"SortAs": "SGML",
-					"GlossTerm": "Standard Generalized Markup Language",
-					"Acronym": "SGML",
-					"Abbrev": "ISO 8879:1986",
-					"GlossDef": {
-                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
-						"GlossSeeAlso": ["GML", "XML"]
-                    },
-					"GlossSee": "markup"
-                }
-            }
-        }
-    }
-};
-
-
-//   var jsonResponse = [];
-//   jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
-   res.send(data);
-
-    //
-    //
-    // console.log(res);
-    // res.send("yesyesyes");
+app.get('/*', function(req, res) {
+    var jsonResponse = [];
+    jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
+    res.send(jsonResponse);
 });
