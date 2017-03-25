@@ -47,7 +47,7 @@ app.get('/bot', function(req, res) {
     var no_8 = req.query.no8;
 
 
-    jsonResponse.push({"text" : "No1 : "+(no_1*5)});
+    jsonResponse.push({"text" : "No1 : "+(no_1*5+no_2)});
     console.log("no1 : "+(no_1*5));
 
     // var child = req.query.childrenPrice;
