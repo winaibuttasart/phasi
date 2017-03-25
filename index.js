@@ -27,11 +27,12 @@ app.listen(app.get('port'), function() {
 // });
 
 app.get('/bot', function(req, res) {
-  //  var jsonResponse = [];
-  //  jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
-    //res.send(jsonResponse);
-    var text = req.body.events[0].message.text
-    var sender = req.body.events[0].source.userId
-    console.log(res);
-    res.send("yesyesyes");
+   var jsonResponse = [];
+   jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
+   res.send(jsonResponse);
+
+    //
+    //
+    // console.log(res);
+    // res.send("yesyesyes");
 });
