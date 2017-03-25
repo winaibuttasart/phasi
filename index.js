@@ -46,21 +46,21 @@ app.get('/bot', function(req, res) {
     var no_7 = req.query.no7;
     var no_8 = req.query.no8;
 
-    var child = req.query.childrenPrice;
-    var disa = req.query.disable;
-    var hom = req.query.home;
-    var insur = req.query.Insure;
-    var lt = req.query.LTF;
-    var par = req.query.parent;
-    var pari = req.query.parentInsure;
-    var pen = req.query.pension;
-    var penc = req.query.pensionchip;
-    var provi = req.query.provident;
-    var rm = req.query.RMF;
-    var sara = req.query.salary;
-    var soci = req.query.socialFund;
-    var th = req.query.thaiTour;
-    var st = req.query.step;
+    // var child = req.query.childrenPrice;
+    // var disa = req.query.disable;
+    // var hom = req.query.home;
+    // var insur = req.query.Insure;
+    // var lt = req.query.LTF;
+    // var par = req.query.parent;
+    // var pari = req.query.parentInsure;
+    // var pen = req.query.pension;
+    // var penc = req.query.pensionchip;
+    // var provi = req.query.provident;
+    // var rm = req.query.RMF;
+    // var sara = req.query.salary;
+    // var soci = req.query.socialFund;
+    // var th = req.query.thaiTour;
+    // var st = req.query.step;
 
 
 
