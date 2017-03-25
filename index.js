@@ -18,7 +18,16 @@ app.get('/cool', function(request, response) {
   response.send(cool());
 });
 
-
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
+});
+
+// app.listen(80, function() {
+//     console.log('Chatfuel Bot-Server listening on port 80...');
+// });
+
+app.get('/bot', function(req, res) {
+    var jsonResponse = [];
+    jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
+    res.send(jsonResponse);
 });
