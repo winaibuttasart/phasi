@@ -27,9 +27,21 @@ app.listen(app.get('port'), function() {
 // });
 
 app.get('/bot', function(req, res) {
-   var jsonResponse = [];
-   jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
-   res.send(jsonResponse);
+
+  var data = {
+     to: sender,
+     messages: [
+       {
+         type: 'text',
+         text: "hi am test"
+       }
+     ]
+   };
+
+
+//   var jsonResponse = [];
+//   jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
+   res.send(data);
 
     //
     //
