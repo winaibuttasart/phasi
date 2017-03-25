@@ -64,7 +64,9 @@ app.get('/bot', function(req, res) {
 
 
 
-    var total = 0,sum = 0,lod = 0;
+    var total = 0;
+    var sum = 0;
+    var lod = 0;
     if(no_1 > 0){
       // choose state one (รายได้พึงประเมิน)
       sum += no_1;
