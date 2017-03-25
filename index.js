@@ -30,22 +30,17 @@ app.listen(app.get('port'), function() {
 
 
 app.get('/bot', function(req, res) {
-
-    console.log('\n\n\n\n');
-
     var url_parts = url.parse(req.url, true);
     var query = url_parts.query;
     // var salary = req.query.salary; // $_GET["salary"]
     // salary *= 12;
     // var gnder = req.query.gender;
-    var sing = req.query.Single;
+    var no = req.query.no1;
 
-
-    
-    console.log(sing);
+    console.log(no);
 
     var jsonResponse = [];
-    jsonResponse.push({"text" : "Single : "+sing});
+    jsonResponse.push({"text" : "No1 : "+no});
   //  jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..."+gnder+"  salary  = "+salary});
 
     res.send(jsonResponse);
