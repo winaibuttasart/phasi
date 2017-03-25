@@ -99,7 +99,8 @@ app.get('/bot', function(req, res) {
 
     }
 
-    console.log(total);
+    console.log("sum = "+sum);
+    console.log("total = "+total);
 //    var s01 = req.query.steps;
 
     //jsonResponse.push({"text" : "step : "+s01});
