@@ -36,9 +36,10 @@ app.get('/bot', function(req, res) {
     var url_parts = url.parse(req.url, true);
     var query = url_parts.query;
     var salary = req.query.salary; // $_GET["salary"]
+    var gnder = req.query.gender;
     console.log(salary);
 
     var jsonResponse = [];
-    jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..."+salary });
+    jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..."+gender });
     res.send(jsonResponse);
 });
