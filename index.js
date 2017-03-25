@@ -24,8 +24,13 @@ app.listen(app.get('port'), function() {
 
 
 app.get('/bot', function(req, res) {
-
+    console.log('new new new new \n');
     console.log(res);
+
+    var tmp =  res;
+    var number = json[''];
+
+
 
     var jsonResponse = [];
     jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
