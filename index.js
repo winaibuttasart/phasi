@@ -29,14 +29,27 @@ app.listen(app.get('port'), function() {
 app.get('/bot', function(req, res) {
 
   var data = {
-     to: sender,
-     messages: [
-       {
-         type: 'text',
-         text: "hi am test"
-       }
-     ]
-   };
+    "glossary": {
+        "title": "example glossary",
+		"GlossDiv": {
+            "title": "S",
+			"GlossList": {
+                "GlossEntry": {
+                    "ID": "SGML",
+					"SortAs": "SGML",
+					"GlossTerm": "Standard Generalized Markup Language",
+					"Acronym": "SGML",
+					"Abbrev": "ISO 8879:1986",
+					"GlossDef": {
+                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
+						"GlossSeeAlso": ["GML", "XML"]
+                    },
+					"GlossSee": "markup"
+                }
+            }
+        }
+    }
+};
 
 
 //   var jsonResponse = [];
