@@ -24,7 +24,7 @@ app.listen(app.get('port'), function() {
 
 
 app.get('/bot', function(req, res) {
-    console.log('new new new new \n');
+    console.log('new new new new');
     console.log(res);
 
     var tmp =  res;
