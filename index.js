@@ -31,8 +31,9 @@ app.listen(app.get('port'), function() {
 app.get('/bot', function(req, res) {
 
     console.log('\n\n\n\n');
-    console.log(req);
-    
+
+    var jsonObject = JSON.parse(req);
+        console.log(jsonObject);
     var jsonResponse = [];
     jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
     res.send(jsonResponse);
