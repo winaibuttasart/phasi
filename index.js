@@ -31,5 +31,5 @@ app.get('/bot', function(req, res) {
   //  jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
     //res.send(jsonResponse);
     console.log(res);
-    res.send(res);
+    res.send("yesyesyes");
 });
