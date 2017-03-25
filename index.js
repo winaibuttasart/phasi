@@ -41,7 +41,8 @@ app.get('/bot', function(req, res) {
     console.log(salary);
 
     var jsonResponse = [];
-    jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..."+gnder+"  salary  = "+salary});
+    jsonResponse.push({"text" : salary});
+  //  jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..."+gnder+"  salary  = "+salary});
 
     res.send(jsonResponse);
 });
