@@ -1,6 +1,7 @@
 var express = require('express');
 var cool =require('cool-ascii-faces');
 var bodyParser = require('body-parser');
+var url = require('url');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -31,8 +32,7 @@ app.listen(app.get('port'), function() {
 app.get('/bot', function(req, res) {
 
     console.log('\n\n\n\n');
-
-    var url = require('url');
+  
     var url_parts = url.parse(req.url, true);
     var query = url_parts.query;
     var salary = req.query.salary; // $_GET["salary"]
