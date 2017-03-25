@@ -37,28 +37,71 @@ app.get('/bot', function(req, res) {
     var jsonResponse = [];
     var url_parts = url.parse(req.url, true);
     var query = url_parts.query;
-    // var no_1 = req.query.no1;
-    // var no_2 = req.query.no2;
-    // var no_3 = req.query.no3;
-    // var no_4 = req.query.no4;
-    // var no_5 = req.query.no5;
-    // var no_6 = req.query.no6;
-    // var no_7 = req.query.no7;
-    // var no_8 = req.query.no8;
+    var no_1 = req.query.no1;
+    var no_2 = req.query.no2;
+    var no_3 = req.query.no3;
+    var no_4 = req.query.no4;
+    var no_5 = req.query.no5;
+    var no_6 = req.query.no6;
+    var no_7 = req.query.no7;
+    var no_8 = req.query.no8;
 
-    // console.log(no_1);
-    var s01 = req.query.steps;
-    
-    jsonResponse.push({"text" : "step : "+s01});
+    var total = 0,sum = 0,lod = 0;
+    if(no_1 > 0){
+      // choose state one (รายได้พึงประเมิน)
+      sum += no_1;
+      sum += no_2;
+      sum += no_3;
+      sum += no_4;
+      sum += no_5;
+      sum += no_6;
+      sum += no_7;
+      sum += no_8;
+      if((no_1 + no_2)*0.5 > 100000){
+        total += 100000;
+      }else{
+        total += (no_1 + no_2)*0.5 ;
+      }                                         // finish no_1 and no_2
+      if(no_3*0.5 > 100000){
+        total += 100000;
+      }else{
+        total += no_3*0.5;
+      }                                         // finish no_3
+      total += no_4;                            // finish no_4
+      total += no_5*0.2;                        // finish no_5
+      total += no_6*0.3;                        // finish no_6
+      total += no_7 * 0.7                       // finish no_7
+      total += no_8*0.4                         // finish no_8
 
-    // jsonResponse.push({"text" : "No1 : "+no_1});
-    // jsonResponse.push({"text" : "No2 : "+no_2});
-    // jsonResponse.push({"text" : "No3 : "+no_3});
-    // jsonResponse.push({"text" : "No4 : "+no_4});
-    // jsonResponse.push({"text" : "No5 : "+no_5});
-    // jsonResponse.push({"text" : "No6 : "+no_6});
-    // jsonResponse.push({"text" : "No7 : "+no_7});
-    // jsonResponse.push({"text" : "No8 : "+no_8});
+    }else{
+      // choose state two  (ลดหย่อนภาษี)
+
+
+    }
+
+    console.log(total);
+//    var s01 = req.query.steps;
+
+    //jsonResponse.push({"text" : "step : "+s01});
+
+    jsonResponse.push({"text" : "No1 : "+no_1});
+    jsonResponse.push({"text" : "No2 : "+no_2});
+    jsonResponse.push({"text" : "No3 : "+no_3});
+    jsonResponse.push({"text" : "No4 : "+no_4});
+    jsonResponse.push({"text" : "No5 : "+no_5});
+    jsonResponse.push({"text" : "No6 : "+no_6});
+    jsonResponse.push({"text" : "No7 : "+no_7});
+    jsonResponse.push({"text" : "No8 : "+no_8});
+    jsonResponse.push({"text" : "รวมเงินได้พึงประเมิน : "+sum});
+    jsonResponse.push({"text" : "รวมค่าใช้จ่าย : "+total});
+    jsonResponse.push({"text" : "รวมค่าลดหย่อน : "+lod});
+    jsonResponse.push({"text" : "พึงประเมิน - ค่าใช้จ่าย : "+(sum-total)});
+    jsonResponse.push({"text" : "พึงประเมิน - ค่าใช้จ่าย - ค่าลดหย่อน : "+(sum-total -lod)});
+    var sudti = sum-total -lod;
+    var last = 0;
+
+
+
 
   //  jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..."+gnder+"  salary  = "+salary});
 
