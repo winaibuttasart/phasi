@@ -46,6 +46,26 @@ app.get('/bot', function(req, res) {
     var no_7 = req.query.no7;
     var no_8 = req.query.no8;
 
+
+    jsonResponse.push({"text" : "No1 : "+no_1});
+    jsonResponse.push({"text" : "No2 : "+no_2});
+    jsonResponse.push({"text" : "No3 : "+no_3});
+    jsonResponse.push({"text" : "No4 : "+no_4});
+    jsonResponse.push({"text" : "No5 : "+no_5});
+    jsonResponse.push({"text" : "No6 : "+no_6});
+    jsonResponse.push({"text" : "No7 : "+no_7});
+    jsonResponse.push({"text" : "No8 : "+no_8});
+    jsonResponse.push({"text" : "sum : "+(no_1+no_2+no_3+no_4+no_5+no_6+no_7+no_8)});
+    console.log("no1 : "+no_1);
+    console.log("no2 : "+no_2);
+    console.log("no3 : "+no_3);
+    console.log("no4 : "+no_4);
+    console.log("no5 : "+no_5);
+    console.log("no6 : "+no_6);
+    console.log("no7 : "+no_7);
+    console.log("no8 : "+no_8);
+    console.log("sum : "+(no_1+no_2+no_3+no_4+no_5+no_6+no_7+no_8));
+
     // var child = req.query.childrenPrice;
     // var disa = req.query.disable;
     // var hom = req.query.home;
@@ -64,43 +84,43 @@ app.get('/bot', function(req, res) {
 
 
 
-    var total = 0;
-    var sum = 0;
-    var lod = 0;
-    if(no_1 > 0){
-      // choose state one (รายได้พึงประเมิน)
-      sum += no_1;
-      sum += no_2;
-      sum += no_3;
-      sum += no_4;
-      sum += no_5;
-      sum += no_6;
-      sum += no_7;
-      sum += no_8;
-      if((no_1 + no_2)*0.5 > 100000){
-        total += 100000;
-      }else{
-        total += (no_1 + no_2)*0.5 ;
-      }                                         // finish no_1 and no_2
-      if(no_3*0.5 > 100000){
-        total += 100000;
-      }else{
-        total += no_3*0.5;
-      }                                         // finish no_3
-      total += no_4;                            // finish no_4
-      total += no_5*0.2;                        // finish no_5
-      total += no_6*0.3;                        // finish no_6
-      total += no_7 * 0.7                       // finish no_7
-      total += no_8*0.4                         // finish no_8
+    // var total = 0;
+    // var sum = 0;
+    // var lod = 0;
+    // if(no_1 > 0){
+    //   // choose state one (รายได้พึงประเมิน)
+    //   sum += no_1;
+    //   sum += no_2;
+    //   sum += no_3;
+    //   sum += no_4;
+    //   sum += no_5;
+    //   sum += no_6;
+    //   sum += no_7;
+    //   sum += no_8;
+    //   if((no_1 + no_2)*0.5 > 100000){
+    //     total += 100000;
+    //   }else{
+    //     total += (no_1 + no_2)*0.5 ;
+    //   }                                         // finish no_1 and no_2
+    //   if(no_3*0.5 > 100000){
+    //     total += 100000;
+    //   }else{
+    //     total += no_3*0.5;
+    //   }                                         // finish no_3
+    //   total += no_4;                            // finish no_4
+    //   total += no_5*0.2;                        // finish no_5
+    //   total += no_6*0.3;                        // finish no_6
+    //   total += no_7 * 0.7                       // finish no_7
+    //   total += no_8*0.4                         // finish no_8
+    //
+    // }else{
+    //   // choose state two  (ลดหย่อนภาษี)
+    //
+    //
+    // }
 
-    }else{
-      // choose state two  (ลดหย่อนภาษี)
 
 
-    }
-
-    console.log("sum = "+sum);
-    console.log("total = "+total);
 //    var s01 = req.query.steps;
 
     //jsonResponse.push({"text" : "step : "+s01});
@@ -113,13 +133,13 @@ app.get('/bot', function(req, res) {
     // jsonResponse.push({"text" : "No6 : "+no_6});
     // jsonResponse.push({"text" : "No7 : "+no_7});
     // jsonResponse.push({"text" : "No8 : "+no_8});
-    jsonResponse.push({"text" : "รวมเงินได้พึงประเมิน : "+sum});
-    jsonResponse.push({"text" : "รวมค่าใช้จ่าย : "+total});
-    jsonResponse.push({"text" : "รวมค่าลดหย่อน : "+lod});
-    jsonResponse.push({"text" : "พึงประเมิน - ค่าใช้จ่าย : "+(sum-total)});
-    jsonResponse.push({"text" : "พึงประเมิน - ค่าใช้จ่าย - ค่าลดหย่อน : "+(sum-total -lod)});
-    var sudti = sum-total -lod;
-    var last = 0;
+    // jsonResponse.push({"text" : "รวมเงินได้พึงประเมิน : "+sum});
+    // jsonResponse.push({"text" : "รวมค่าใช้จ่าย : "+total});
+    // jsonResponse.push({"text" : "รวมค่าลดหย่อน : "+lod});
+    // jsonResponse.push({"text" : "พึงประเมิน - ค่าใช้จ่าย : "+(sum-total)});
+    // jsonResponse.push({"text" : "พึงประเมิน - ค่าใช้จ่าย - ค่าลดหย่อน : "+(sum-total -lod)});
+    // var sudti = sum-total -lod;
+    // var last = 0;
 
 
 
