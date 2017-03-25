@@ -40,6 +40,6 @@ app.get('/bot', function(req, res) {
     console.log(salary);
 
     var jsonResponse = [];
-    jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..."+gender });
+    jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..."+gnder });
     res.send(jsonResponse);
 });
