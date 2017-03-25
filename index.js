@@ -36,6 +36,7 @@ app.get('/bot', function(req, res) {
     var url_parts = url.parse(req.url, true);
     var query = url_parts.query;
     var salary = req.query.salary; // $_GET["salary"]
+    salary *= 12;
     var gnder = req.query.gender;
     console.log(salary);
 
