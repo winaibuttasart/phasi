@@ -33,7 +33,6 @@ app.get('/bot', function(req, res) {
     console.log(res);
 
     var tmp =  res;
-    var number = json[''];
 
 
 
