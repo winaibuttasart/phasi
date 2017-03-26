@@ -61,8 +61,8 @@ app.get('/bot', function(req, res) {
     }
 
 
-    jsonResponse.push({"text" : "No1 : "+45});
-    console.log("no1 : "+45);
+    jsonResponse.push({"text" : "No1 : "+no_1});
+    console.log("no1 : "+no_1);
 
     // var child = req.query.childrenPrice;
     // var disa = req.query.disable;
