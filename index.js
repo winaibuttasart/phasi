@@ -77,11 +77,24 @@ app.get('/bot', function(req, res) {
     var sum = 0;
     if(no_1 > 0){
       // choose state one (รายได้พึงประเมิน)
-      sum = sum+no_1+no_2+no_3+no_4+no_5+no_6+no_7+no_8;
-      if((no_1 + no_2)*0.5 > 100000){
+      sum = no_1+no_2+no_3+no_4+no_5+no_6+no_7+no_8;
+      console.log("sum = "+sum);
+      console.log("no_1"+ no_1);
+      console.log("no_2"+ no_2);
+      console.log("no_3"+ no_3);
+      console.log("no_4"+ no_4);
+      console.log("no_5"+ no_5);
+      console.log("no_6"+ no_6);
+      console.log("no_7"+ no_7);
+      console.log("no_8"+ no_8);
+      
+
+
+      no_1 = no_1+no_2;
+      if(no_1*0.5 > 100000){
         total = total + 100000;
       }else{
-        total = total +  ((no_1 + no_2)*0.5 );
+        total = total +  (no_1*0.5 );
       }                                           // finish no_1 and no_2
       if(no_3*0.5 > 100000){
         total = total + 100000;
