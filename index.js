@@ -90,7 +90,7 @@ app.get('/bot', function(req, res) {
 
 
 
-      no_1 = no_1+no_2;
+      no_1 = (no_1*12)+no_2;
       if(no_1*0.5 > 100000){
         total = total + 100000;
       }else{
@@ -113,18 +113,9 @@ app.get('/bot', function(req, res) {
 
     }
 
-    // jsonResponse.push({"text" : "No1 : "+no_1});
-    // jsonResponse.push({"text" : "No2 : "+no_2});
-    // jsonResponse.push({"text" : "No3 : "+no_3});
-    // jsonResponse.push({"text" : "No4 : "+no_4});
-    // jsonResponse.push({"text" : "No5 : "+no_5});
-    // jsonResponse.push({"text" : "No6 : "+no_6});
-    // jsonResponse.push({"text" : "No7 : "+no_7});
-    // jsonResponse.push({"text" : "No8 : "+no_8});
-     jsonResponse.push({"text" : "รวมเงินได้พึงประเมิน : "+sum});
-     jsonResponse.push({"text" : "รวมค่าใช้จ่าย : "+total});
+     jsonResponse.push({"text" : "รวมเงินได้พึงประเมิน : "+sum +"\nรวมค่าใช้จ่าย : "+total+"\nเงินได้พึงประเมิน - ค่าใช้จ่าย : "+(sum-total)});
+
     // jsonResponse.push({"text" : "รวมค่าลดหย่อน : "+lod});
-     jsonResponse.push({"text" : "พึงประเมิน - ค่าใช้จ่าย : "+(sum-total)});
     // jsonResponse.push({"text" : "พึงประเมิน - ค่าใช้จ่าย - ค่าลดหย่อน : "+(sum-total -lod)});
     // var sudti = sum-total -lod;
     // var last = 0;
