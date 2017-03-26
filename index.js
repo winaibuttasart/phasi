@@ -79,15 +79,15 @@ app.get('/bot', function(req, res) {
       // choose state one (รายได้พึงประเมิน)
       sum = no_1+no_2+no_3+no_4+no_5+no_6+no_7+no_8;
       console.log("sum = "+sum);
-      console.log("no_1"+ no_1);
-      console.log("no_2"+ no_2);
-      console.log("no_3"+ no_3);
-      console.log("no_4"+ no_4);
-      console.log("no_5"+ no_5);
-      console.log("no_6"+ no_6);
-      console.log("no_7"+ no_7);
-      console.log("no_8"+ no_8);
-      
+      console.log("no_1 = "+ no_1);
+      console.log("no_2 = "+ no_2);
+      console.log("no_3 = "+ no_3);
+      console.log("no_4 = "+ no_4);
+      console.log("no_5 = "+ no_5);
+      console.log("no_6 = "+ no_6);
+      console.log("no_7 = "+ no_7);
+      console.log("no_8 = "+ no_8);
+
 
 
       no_1 = no_1+no_2;
