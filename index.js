@@ -58,23 +58,25 @@ app.get('/bot', function(req, res) {
     var divor = req.query.divorce;
     var mar = req.query.marry;
     var hom = req.query.home;
-    var insur = req.query.Insure;
+    var Insur = req.query.Insure;
     var lt = req.query.LTF;
     var par = req.query.parent;
     var pari = req.query.parentInsure;
     var partner = req.query.partnerInsure;
     var pen = req.query.pension;
     var penc = req.query.pensionchip;
-//    var provi = req.query.provident;
+    var provi = req.query.provident;
     var rm = req.query.RMF;
-//    var sara = req.query.salary;
+    var sara = req.query.salary;
     var soci = req.query.socialFund;
     var th = req.query.thaiTour;
     var st = req.query.steps;
+    var insur = req.query.insure;
 
 
     var total = 0;
     var sum = 0;
+    var discout = 0;
     if(no_1 > 0){
       // choose state one (รายได้พึงประเมิน)
       sum = no_1+no_2+no_3+no_4+no_5+no_6+no_7+no_8;
@@ -106,14 +108,52 @@ app.get('/bot', function(req, res) {
       total = total + (no_6*0.3);               // finish no_6    fix เป็นอาชีพอิสระทั่วไป คิด 30% กรณีใบประกอบโรคศิลป์ยังไม่รองรับ (60%)
       total = total * (0.7);                    // finish no_7
       total = total + (no_8*0.4);               // finish no_8    fix หักค่าใช้จ่าย 40%
+      jsonResponse.push({"text" : "รวมเงินได้พึงประเมิน : "+sum +" บาท\nรวมค่าใช้จ่าย : "+total+" บาท\nเงินได้พึงประเมิน - ค่าใช้จ่าย : "+sprintf("%.2f",(sum-total))+" บาท"});
 
     }else{
       // choose state two  (ลดหย่อนภาษี)
+        if(sum-total <= 150000){
+          jsonResponse.push({"text" : "ปีนี้คุณมีรายได้อยู่ในเกณฑ์ยกเว้นภาษี แต่อย่าลืมไปยื่นภาษีก่อน 31 มีนาคมของทุกปีนะคะ !"});
+        } else{
+          discout = discout+30000;
+          if(mar === 1){
+            discout = discout+30000;
+            discout = discout + 30000;
+          }
+          if(child > 0){
+            discout = discout + (childrenPrice*15000);
+          }
 
+          if(insure > 0){
+            if(insure > 100000){
+              discout = discout + 100000;
+            }else{
+              discout = discout + insure;
+            }
+          }
+          if(home > 0){
+            discout = discout + 100000;
+          }
+          if(provi > 0){
+            discout = discout + 500000;
+          }
+          if(RMF > 0){
+            discout = discout + 500000;
+          }
+          if(LTF){
+            discout = discout +(sum * 0.15);
+          }
 
+          var sumtotal = ((sum-total) - discout);
+          //jsonResponse.push({"text" : "รวมเงินค่าลดหย่อนที่คุณสามารถลดหย่อนได้ : "+discout+" บาท\nสรุปยอดเงินที่คุณต้องเสียภาษีปีนี้คือ "++" บาท"});
+          //sumtotal = sumtotal - 150000;
+          //var vat = sumtotal * 0.05;
+          jsonResponse.push({"text" : "ยังทำไม่เสร็จ"});
+
+      }
     }
 
-     jsonResponse.push({"text" : "รวมเงินได้พึงประเมิน : "+sum +" บาท\nรวมค่าใช้จ่าย : "+total+" บาท\nเงินได้พึงประเมิน - ค่าใช้จ่าย : "+(sum-total)+" บาท"});
+
 
     // jsonResponse.push({"text" : "รวมค่าลดหย่อน : "+lod});
     // jsonResponse.push({"text" : "พึงประเมิน - ค่าใช้จ่าย - ค่าลดหย่อน : "+(sum-total -lod)});
