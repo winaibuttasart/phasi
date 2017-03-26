@@ -113,7 +113,7 @@ app.get('/bot', function(req, res) {
 
     }
 
-     jsonResponse.push({"text" : "รวมเงินได้พึงประเมิน : "+sum +"\nรวมค่าใช้จ่าย : "+total+"\nเงินได้พึงประเมิน - ค่าใช้จ่าย : "+(sum-total)});
+     jsonResponse.push({"text" : "รวมเงินได้พึงประเมิน : "+sum +" บาท\nรวมค่าใช้จ่าย : "+total+" บาท\nเงินได้พึงประเมิน - ค่าใช้จ่าย : "+(sum-total)+" บาท"});
 
     // jsonResponse.push({"text" : "รวมค่าลดหย่อน : "+lod});
     // jsonResponse.push({"text" : "พึงประเมิน - ค่าใช้จ่าย - ค่าลดหย่อน : "+(sum-total -lod)});
