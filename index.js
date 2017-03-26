@@ -49,7 +49,7 @@ app.get('/bot', function(req, res) {
 
     console.log("no_1  = "+no_1);
 
-    if(no_1 === 'Undifind'){
+    if(no_1 === 'undefined'){
       no_1  = 0;
       no_2  = 0;
       no_3  = 0;
