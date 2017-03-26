@@ -56,21 +56,24 @@ app.get('/bot', function(req, res) {
     jsonResponse.push({"text" : "sum no1 + no2 : "+tmp});
 
 
-    // var child = req.query.childrenPrice;
-    // var disa = req.query.disable;
-    // var hom = req.query.home;
-    // var insur = req.query.Insure;
-    // var lt = req.query.LTF;
-    // var par = req.query.parent;
-    // var pari = req.query.parentInsure;
-    // var pen = req.query.pension;
-    // var penc = req.query.pensionchip;
-    // var provi = req.query.provident;
-    // var rm = req.query.RMF;
-    // var sara = req.query.salary;
-    // var soci = req.query.socialFund;
-    // var th = req.query.thaiTour;
-    // var st = req.query.step;
+    var child = req.query.childrenPrice;
+    var disa = req.query.disable;
+    var divor = req.query.divorce;
+    var mar = req.query.marry;
+    var hom = req.query.home;
+    var insur = req.query.Insure;
+    var lt = req.query.LTF;
+    var par = req.query.parent;
+    var pari = req.query.parentInsure;
+    var partner = req.query.partnerInsure;
+    var pen = req.query.pension;
+    var penc = req.query.pensionchip;
+//    var provi = req.query.provident;
+    var rm = req.query.RMF;
+//    var sara = req.query.salary;
+    var soci = req.query.socialFund;
+    var th = req.query.thaiTour;
+    var st = req.query.steps;
 
 
 
