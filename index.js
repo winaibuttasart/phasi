@@ -50,8 +50,10 @@ app.get('/bot', function(req, res) {
     console.log("no_1  = "+no_1);
 
 
-
+    var tmp = no_1+no_2;
+    console.log("tmp  = "+tmp);
     jsonResponse.push({"text" : "No1 : "+no_1});
+    jsonResponse.push({"text" : "sum no1 + no2 : "+tmp});
 
 
     // var child = req.query.childrenPrice;
