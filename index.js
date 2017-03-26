@@ -74,36 +74,29 @@ app.get('/bot', function(req, res) {
 
 
 
-    // var total = 0;
-    // var sum = 0;
-    // var lod = 0;
-    // if(no_1 > 0){
-    //   // choose state one (รายได้พึงประเมิน)
-    //   sum += no_1;
-    //   sum += no_2;
-    //   sum += no_3;
-    //   sum += no_4;
-    //   sum += no_5;
-    //   sum += no_6;
-    //   sum += no_7;
-    //   sum += no_8;
-    //   if((no_1 + no_2)*0.5 > 100000){
-    //     total += 100000;
-    //   }else{
-    //     total += (no_1 + no_2)*0.5 ;
-    //   }                                         // finish no_1 and no_2
-    //   if(no_3*0.5 > 100000){
-    //     total += 100000;
-    //   }else{
-    //     total += no_3*0.5;
-    //   }                                         // finish no_3
-    //   total += no_4;                            // finish no_4
-    //   total += no_5*0.2;                        // finish no_5
-    //   total += no_6*0.3;                        // finish no_6
-    //   total += no_7 * 0.7                       // finish no_7
-    //   total += no_8*0.4                         // finish no_8
-    //
-    // }else{
+    var total = 0;
+    var sum = 0;
+    if(no_1 > 0){
+      // choose state one (รายได้พึงประเมิน)
+      sum = sum+no_1+no_2+no_3+no_4+no_5+no_6+no_7+no_8;
+      if((no_1 + no_2)*0.5 > 100000){
+        total = total + 100000;
+      }else{
+        total = total +  ((no_1 + no_2)*0.5 );
+      }                                         // finish no_1 and no_2
+      if(no_3*0.5 > 100000){
+        total = total + 100000;
+      }else{
+        total =total + (no_3*0.5);
+      }                                         // finish no_3
+      total = total + no_4;                            // finish no_4
+      total = total + (no_5*0.2);                        // finish no_5
+      total = total + (no_6*0.3);                        // finish no_6
+      total = total * (0.7);                       // finish no_7
+      total = total + (no_8*0.4);                         // finish no_8
+
+    }
+    //else{
     //   // choose state two  (ลดหย่อนภาษี)
     //
     //
@@ -114,7 +107,7 @@ app.get('/bot', function(req, res) {
 //    var s01 = req.query.steps;
 
     //jsonResponse.push({"text" : "step : "+s01});
-
+    jsonResponse.push({"text" : "total : "+total});
     // jsonResponse.push({"text" : "No1 : "+no_1});
     // jsonResponse.push({"text" : "No2 : "+no_2});
     // jsonResponse.push({"text" : "No3 : "+no_3});
