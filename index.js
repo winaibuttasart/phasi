@@ -38,31 +38,21 @@ app.get('/bot', function(req, res) {
     var url_parts = url.parse(req.url, true);
     var query = url_parts.query;
 
-    var no_1 = req.query.no1;
-    var no_2 = req.query.no2;
-    var no_3 = req.query.no3;
-    var no_4 = req.query.no4;
-    var no_5 = req.query.no5;
-    var no_6 = req.query.no6;
-    var no_7 = req.query.no7;
-    var no_8 = req.query.no8;
+    var no_1 = req.query.no1*1;
+    var no_2 = req.query.no2*1;
+    var no_3 = req.query.no3*1;
+    var no_4 = req.query.no4*1;
+    var no_5 = req.query.no5*1;
+    var no_6 = req.query.no6*1;
+    var no_7 = req.query.no7*1;
+    var no_8 = req.query.no8*1;
 
     console.log("no_1  = "+no_1);
 
-    if(no_1 === 'undefined'){
-      no_1  = 0;
-      no_2  = 0;
-      no_3  = 0;
-      no_4  = 0;
-      no_5  = 0;
-      no_6  = 0;
-      no_7  = 0;
-      no_8  = 0;
-    }
 
 
     jsonResponse.push({"text" : "No1 : "+no_1});
-    console.log("no1 : "+no_1);
+
 
     // var child = req.query.childrenPrice;
     // var disa = req.query.disable;
